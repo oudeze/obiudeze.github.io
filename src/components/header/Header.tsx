@@ -27,15 +27,15 @@ const Header: FC = () => {
     <header className="header">
       <nav className="nav container">
         <a
-          href="https://www.linkedin.com/in/mazine-s-suliman/"
+          href="https://www.linkedin.com/in/obiudeze/"
           target="_blank"
           rel="noreferrer"
           className="nav__logo-img"
         >
           <img src={require("../assets/favi.png")} alt="logo" />
         </a>
-        <a href="https://mazzaleen.github.io/mazza2/" className="nav__logo">
-          Mazine Suliman
+        <a href="https://obiudeze.github.io" className="nav__logo">
+          Obi Udeze
         </a>
 
         <div className={Toogle ? "nav__menu show-menu" : "nav__menu"}>

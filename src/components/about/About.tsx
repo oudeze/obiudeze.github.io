@@ -1,7 +1,7 @@
 import { FC } from "react";
 import "./About.css";
 import Info from "./Info";
-import CV from "../assets/My_Resume.pdf";
+import CV from "../assets/Resume.pdf";
 import { Fade, Slide } from "react-awesome-reveal";
 
 const About: FC = () => {
@@ -13,7 +13,7 @@ const About: FC = () => {
 
       <div className="about__container container grid">
         <img
-          src={require("../assets/IMG_6996.png")}
+          src={require("../assets/activity_pic.jpg")}
           alt="about img"
           className="about__img"
         />{" "}
@@ -23,24 +23,24 @@ const About: FC = () => {
             <Fade direction="right" triggerOnce>
 
 <p className="about__description">
-  🎓 Brown University B.S. in Computer Science & Economics 🎓
+  🎓 Drexel University B.S. in Electrical and Computer Engineering (GPA: 3.55) 🎓
 </p>
 
 <p className="about__description">
-  💼 Enhanced customer data analysis at Salesforce's Marketing Cloud with an anomaly detection system 💼
+  ☁️ AWS Certified Cloud Practitioner, AI Practitioner, and Developer – Associate. Currently working towards Solution Architect certfication☁️
 </p>
 
 <p className="about__description">
-  📈 Led user experience design & data-driven research at JobPulse to optimize platform functionality 📈
+  🚀 Software Development Engineer at Amazon, designing multi-region planning services and ML pipelines that influence over $1M in advertiser budget decisions 🚀
 </p>
 
 <p className="about__description">
-  🍏 As a SWE at Apple, I drive the optimization of SiteWatch by leading cross-functional teams, enhancing feedback systems, & improving feedback processing efficiency. 🍏
+  ⚡ Specialized in cloud infrastructure (AWS), data pipelines, ML model deployment, and maintaining 99.9% uptime with optimized latency ⚡
 </p>
 
 
             </Fade>
-            <a href= "https://docs.google.com/document/d/1aCJg10EWGFqgsyHWGXjHUi06xXAD8VJy/edit?usp=sharing&ouid=116067273422919291186&rtpof=true&sd=true" target="_blank" className="button button--flex">
+            <a href={CV} target="_blank" rel="noopener noreferrer" className="button button--flex">
               See My Most Recent Resume!
               {"  "}
               <svg

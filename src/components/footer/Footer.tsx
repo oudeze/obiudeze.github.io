@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer__container container">
-        <h1 className="footer__title">Mazine Suliman </h1>
+        <h1 className="footer__title">Obi Udeze </h1>
 
         <ul className="footer__list">
           <li>
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
         </ul>
         <div className="footer__social">
           <a
-            href="https://www.linkedin.com/in/mazine-s-suliman/"
+            href="https://www.linkedin.com/in/obiudeze/"
             target={"_blank"}
             rel="noreferrer"
             className="footer__social-link"
@@ -54,20 +54,12 @@ const Footer: React.FC = () => {
             <i className="bx bxl-linkedin"></i>
           </a>
           <a
-            href="https://github.com/Mazzaleen"
+            href="https://github.com/oudeze"
             className="footer__social-link"
             target={"_blank"}
             rel="noreferrer"
           >
             <i className="bx bxl-github"></i>
-          </a>
-          <a
-            href="https://medium.com/@mazine_suliman"
-            className="footer__social-link"
-            target={"_blank"}
-            rel="noreferrer"
-          >
-            <i className="bx bxl-medium"></i>
           </a>
           {/* <a
             href="https://twitter.com/amazzaleen"
@@ -79,8 +71,40 @@ const Footer: React.FC = () => {
           </a> */}
         </div>
     <span className="footer__copy">
-      &copy; {thisYear} Mazine <br />
-          Crafted with code, a touch of salt, and a love for 🐧
+      &copy; {thisYear} Obi Udeze <br />
+          Hosted with github pages checkout{" "}
+          <a
+            href="https://github.com/oudeze"
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: "inherit", textDecoration: "underline" }}
+          >
+            my github
+          </a>{" "}
+          for how to do the same
+    </span>
+    <span className="footer__copy" style={{ fontSize: "0.85rem", opacity: 0.8, marginTop: "0.5rem", display: "block" }}>
+      Contents may not be up to date, checkout{" "}
+      <a
+        href="https://www.linkedin.com/in/obiudeze/"
+        target="_blank"
+        rel="noreferrer"
+        style={{ color: "inherit", textDecoration: "underline" }}
+      >
+        my LinkedIn
+      </a>{" "}
+      for updated info
+    </span>
+    <span className="footer__copy" style={{ fontSize: "0.85rem", opacity: 0.8, marginTop: "0.5rem", display: "block" }}>
+      Pulled from Mazzine's github portfolio.{" "}
+      <a
+        href="https://github.com/Mazzaleen/mazza2"
+        target="_blank"
+        rel="noreferrer"
+        style={{ color: "inherit", textDecoration: "underline" }}
+      >
+        Check it out!
+      </a>
     </span>
       </div>
     </footer>

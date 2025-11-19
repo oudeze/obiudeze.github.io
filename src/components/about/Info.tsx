@@ -11,7 +11,7 @@ const Info: React.FC = () => {
       <div className="about__box">
         <i className="fa fa-headphones about__icon"></i>
         <h2 className="about__title">Interested In</h2>
-        <span className="about__subtitle">Product Management , Engineering Project Management, Technical Product Management </span>
+        <span className="about__subtitle">Software Development, Full-Stack Engineering, System Design, Data-driven services </span>
       </div>
     </div>
   );

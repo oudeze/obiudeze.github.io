@@ -1,58 +1,32 @@
-import React, { useRef, useState, FormEvent } from "react";
+import React, { useRef, FormEvent } from "react";
 import { Slide } from "react-awesome-reveal";
 import "./Contact.css";
-import Success from "../success/Success";
 
 const Contact: React.FC = () => {
-  const [sent, setSent] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(false);
   const inputRef: any = useRef<HTMLFormElement>(null);
-  const serviceId: string | undefined = process.env.REACT_APP_MY_SERVICE;
-  const templateId: string | undefined = process.env.REACT_APP_MY_TEMPLATE;
-  const publicKey: string | undefined = process.env.REACT_APP_MY_PUBLIC_KEY;
 
-  const method: string = "POST";
-  const url: string = "https://api.emailjs.com/api/v1.0/email/send";
-
-  // create an async function to send the email
-  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
-    setLoading(true);
+  // Create mailto link with pre-filled form data
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      const response = await fetch(url, {
-        method,
-        headers: {
-          "Content-Type": "application/json",
-        },
-
-        body:
-          JSON.stringify({
-            service_id: serviceId,
-            template_id: templateId,
-            user_id: publicKey,
-            template_params: {
-              name: inputRef.current.name.value,
-              email: inputRef.current.email.value,
-              project: inputRef.current.project.value,
-            },
-          }) || undefined,
-      });
-      if (response.status === 200) {
-        setSent(true);
-        inputRef.current.reset();
-      } else {
-        setSent(false);
-      }
-      setSent(true);
-    } catch (error) {
-      console.log(error);
-    }
-    setLoading(false);
+    const form = inputRef.current;
+    const name = encodeURIComponent(form.name.value);
+    const email = encodeURIComponent(form.email.value);
+    const message = encodeURIComponent(form.message.value);
+    
+    // Create mailto link with subject and body
+    const subject = encodeURIComponent(`Contact from ${name}`);
+    const body = encodeURIComponent(`Hello,\n\n${message}\n\nBest regards,\n${name}\n${email}`);
+    const mailtoLink = `mailto:obiudeze@outlook.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Reset form
+    form.reset();
   };
 
   return (
     <section className="contact section" id="contact">
-      <Success sent={sent} setSent={setSent} />
       <Slide direction="left" triggerOnce>
         <h2 className="section__title">How to contact</h2>
       </Slide>
@@ -69,12 +43,12 @@ const Contact: React.FC = () => {
             <div className="contact__info">
               <div className="contact__card">
                 <i className="bx bx-mail-send conact__card-icon"></i>
-                <h3 className="conact__card-title">Gmail (work)</h3>
+                <h3 className="conact__card-title">Email</h3>
                 <span className="contact__card-data">
-                  mazine_suliman@brown.edu
+                  obiudeze@outlook.com
                 </span>
                 <a
-                  href="mailto:mazine_suliman@brown.edu"
+                  href="mailto:obiudeze@outlook.com"
                   target="_blank"
                   className="contact__button"
                   rel="noreferrer"
@@ -86,25 +60,33 @@ const Contact: React.FC = () => {
               {/* CARD 2 */}
               <div className="contact__info">
                 <div className="contact__card">
-                  <i className="bx bxl-whatsapp conact__card-icon"></i>
-                  <h3 className="conact__card-title">Phone (USA)</h3>
-                  <span className="contact__card-data">+1 (401) 316-8216</span>
-
+                  <i className="bx bxl-linkedin conact__card-icon"></i>
+                  <h3 className="conact__card-title">LinkedIn</h3>
+                  <span className="contact__card-data">linkedin.com/in/obiudeze</span>
+                  <a
+                    href="https://www.linkedin.com/in/obiudeze/"
+                    className="contact__button"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Connect{" "}
+                    <i className="bx bx-right-arrow-alt contact__button-icon"></i>
+                  </a>
                 </div>
               </div>
               {/* CARD 3 */}
               <div className="contact__info">
                 <div className="contact__card">
-                  <i className="bx bxl-whatsapp conact__card-icon"></i>
-                  <h3 className="conact__card-title">Phone (Sudan)</h3>
-                  <span className="contact__card-data">+249 122-0240</span>
+                  <i className="bx bxl-github conact__card-icon"></i>
+                  <h3 className="conact__card-title">GitHub</h3>
+                  <span className="contact__card-data">github.com/oudeze</span>
                   <a
-                    href="https://www.linkedin.com/in/mazine-s-suliman/"
+                    href="https://github.com/oudeze"
                     className="contact__button"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Write me{" "}
+                    View Profile{" "}
                     <i className="bx bx-right-arrow-alt contact__button-icon"></i>
                   </a>
                 </div>
@@ -119,7 +101,7 @@ const Contact: React.FC = () => {
             <h3 className="contact__title">Write an Email </h3>
 
             {/* FORM */}
-            <form className="contact__form" ref={inputRef} onSubmit={sendEmail}>
+            <form className="contact__form" ref={inputRef} onSubmit={handleSubmit}>
               <div className="contact__form-div">
                 <label className="contact__form-tag">Name</label>
                 <input
@@ -153,7 +135,7 @@ const Contact: React.FC = () => {
                 ></textarea>
               </div>
               <button type="submit" className="button button--flex">
-                {loading ? "Sending..." : " Send message"}
+                Open Email Client
                 {"  "}
                 <svg
                   className="button__icon"

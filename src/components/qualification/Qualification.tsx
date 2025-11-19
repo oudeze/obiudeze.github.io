@@ -5,9 +5,9 @@ import "./Qualification.css";
 
 import { positionData } from "../data/positionData";
 import { educationData } from "../data/educationData";
+import { certificationsData } from "../data/certificationsData";
 
-const linkedin = "https://raw.githubusercontent.com/iamhiman/personal-webpage-v2/main/assets/linkedin.webp";
-const www = "https://raw.githubusercontent.com/iamhiman/personal-webpage-v2/main/assets/www.webp";
+const linkedin = require("../assets/linkedin_logo.png");
 
 const Qualification: React.FC = () => {
   const [toggleModal, setToggleModal] = useState<number>(1);
@@ -26,8 +26,9 @@ const Qualification: React.FC = () => {
     setShowMoreExperience((prevState2) => !prevState2);
   };
 
-  const educationItems = showMoreEducation ? educationData : [educationData.sort((a, b) => b.id - a.id)[0]];
-  const experienceItems = showMoreExperience ? positionData : positionData.sort((a, b) => b.id - a.id).slice(0, 3);
+  const educationItems = educationData.sort((a, b) => a.id - b.id);
+  const experienceItems = showMoreExperience ? positionData : positionData.sort((a, b) => a.id - b.id).slice(0, 3);
+  const certificationItems = certificationsData.sort((a, b) => a.id - b.id);
   return (
     <section className="qualification section" id="qualification">
 
@@ -38,7 +39,7 @@ const Qualification: React.FC = () => {
       <Slide direction="right" triggerOnce>
   <span className="section__subtitle">
     Condensed Career Timeline
-    ( <a href="https://www.linkedin.com/in/mazine-s-suliman/" target="_blank" rel="noopener noreferrer">
+    ( <a href="https://www.linkedin.com/in/obiudeze/" target="_blank" rel="noopener noreferrer">
       <i className="bx bxl-linkedin"></i> for more specifics
     </a> )
   </span>
@@ -70,6 +71,17 @@ const Qualification: React.FC = () => {
             <i className="uil uil-briefcase-alt qualification__icon"></i>
             Experience
           </div>
+          <div
+            className={
+              toggleModal === 3
+                ? "qualification__button  qualification__active button--flex"
+                : "qualification__button  button--flex"
+            }
+            onClick={() => toggleTab(3)}
+          >
+            <i className="uil uil-award qualification__icon"></i>
+            Certifications
+          </div>
         </div>
         {/* END BUTTON */}
 
@@ -79,7 +91,7 @@ const Qualification: React.FC = () => {
           {/* Content 1 */}
           {toggleModal === 1 && (
           <div className="jobs_timeline_container">
-          {educationItems.sort((a, b) => b.id - a.id).map(ed => (
+          {educationItems.sort((a, b) => a.id - b.id).map(ed => (
             <div className="job" key={ed?.id}>
             <h2>{ed?.school} - {ed?.degree}</h2>
             <h3>{ed?.grade}</h3>
@@ -112,7 +124,7 @@ const Qualification: React.FC = () => {
         {toggleModal === 2 && (
         <div className="jobs_timeline_container">
 
-          {experienceItems.sort((a, b) => b.id - a.id).map(job => (
+          {experienceItems.sort((a, b) => a.id - b.id).map(job => (
             <div className="job" key={job.id}>
             <h2>{job?.company}</h2>
             <h3>{job?.position_title}</h3>
@@ -129,7 +141,10 @@ const Qualification: React.FC = () => {
                 alt=""
                 onClick={() => window.open(job?.linkedin, "_blank")}
               />
-              <img src={www} alt="" onClick={() => window.open(job?.website, "_blank")} />
+              <i 
+                className="uil uil-globe" 
+                onClick={() => window.open(job?.website, "_blank")}
+              />
             </div>
 
         </div>
@@ -138,6 +153,53 @@ const Qualification: React.FC = () => {
 <button className={`qualification__button ${showMoreExperience ? 'qualification__button--inverse' : ''}`} onClick={handleShowMoreExperience}>
   {showMoreExperience ? 'Show less' : 'Show more employment history'}
 </button>
+        </div>
+        )}
+
+        {/* Content 3 */}
+        {toggleModal === 3 && (
+        <div className="jobs_timeline_container">
+          {certificationItems.map(cert => {
+            // Format date to shorter format (e.g., "Nov 2025" instead of "November 13, 2025")
+            const formatDateShort = (dateStr: string) => {
+              const [monthDay, year] = dateStr.split(', ');
+              const [month, day] = monthDay.split(' ');
+              const monthAbbr = month.substring(0, 3);
+              return `${monthAbbr} ${year}`;
+            };
+            const issueDateShort = formatDateShort(cert.issueDate);
+            const expireDateShort = formatDateShort(cert.expirationDate);
+            
+            return (
+            <div className="job" key={cert.id}>
+              <h2>{cert.name}</h2>
+              <h3>{cert.issuer}</h3>
+              <img
+                src={cert.image}
+                alt={cert.name}
+                className="job_companyLogo"
+                style={{ maxHeight: "80px", objectFit: "contain" }}
+              />
+              <h4>Issue Date: {cert.issueDate}</h4>
+              <h4>Expires: {cert.expirationDate}</h4>
+              <div className="job_date_beforeLine">{issueDateShort}</div>
+              <div className="job_date_afterLine">Validation: {cert.validationNumber}</div>
+              <div className="job_companyLinks">
+                <a
+                  href={cert.validationUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: "inherit", textDecoration: "none" }}
+                >
+                  <i 
+                    className="uil uil-globe" 
+                    style={{ cursor: "pointer", fontSize: "30px" }}
+                  />
+                </a>
+              </div>
+            </div>
+            );
+          })}
         </div>
         )}
 

@@ -11,7 +11,7 @@ const BackEnd: React.FC = () => {
             <i className="bx bx-badge-check"></i>
             <div>
               <h3 className="skills__name">PostgresSQL</h3>
-              <span className="skills__level">Advanced</span>
+              <span className="skills__level">Intermediate</span>
             </div>
           </div>
 
@@ -19,15 +19,7 @@ const BackEnd: React.FC = () => {
             <i className="bx bx-badge-check"></i>
             <div>
               <h3 className="skills__name">Kubernetes</h3>
-              <span className="skills__level">Advanced</span>
-            </div>
-          </div>
-
-          <div className="skills__data">
-            <i className="bx bx-badge-check"></i>
-            <div>
-              <h3 className="skills__name">Splunk</h3>
-              <span className="skills__level">Advanced</span>
+              <span className="skills__level">Intermediate</span>
             </div>
           </div>
 
@@ -35,7 +27,7 @@ const BackEnd: React.FC = () => {
             <i className="bx bx-badge-check"></i>
             <div>
               <h3 className="skills__name">AWS</h3>
-              <span className="skills__level">Beginner</span>
+              <span className="skills__level">Advanced</span>
             </div>
           </div>
 
@@ -43,7 +35,7 @@ const BackEnd: React.FC = () => {
             <i className="bx bx-badge-check"></i>
             <div>
               <h3 className="skills__name">Tableau</h3>
-              <span className="skills__level">Intermediate</span>
+              <span className="skills__level">Beginner</span>
             </div>
           </div>
           {/* ... (Include any other skills as needed) ... */}

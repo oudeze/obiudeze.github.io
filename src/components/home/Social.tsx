@@ -6,7 +6,7 @@ const Social: FC = () => {
     <div className="home__social">
       <Fade direction="up" triggerOnce>
         <a
-          href="https://www.linkedin.com/in/mazine-s-suliman"
+          href="https://www.linkedin.com/in/obiudeze/"
           className="home_social-icon"
           target="_blank"
           rel="noreferrer"
@@ -16,23 +16,12 @@ const Social: FC = () => {
       </Fade>
       <Fade direction="up" delay={100} triggerOnce>
         <a
-          href="https://github.com/Mazzaleen"
+          href="https://github.com/oudeze"
           className="home_social-icon"
           target="_blank"
           rel="noreferrer"
         >
           <i className="uil uil-github-alt"></i>
-        </a>
-      </Fade>
-
-      <Fade direction="up" delay={200} triggerOnce>
-        <a
-          href="https://medium.com/@mazine_suliman"
-          className="home_social-icon"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <i className="bx bxl-medium"></i>
         </a>
       </Fade>
       {/* <Fade direction="up" delay={300} triggerOnce>

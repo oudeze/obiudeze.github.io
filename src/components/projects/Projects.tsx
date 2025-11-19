@@ -23,7 +23,7 @@ const Projects: React.FC = () => {
       </Slide>
       <Slide direction="right" triggerOnce>
         <span className="section__subtitle">
-          A curated collection of my Academic & Personal Projects in engineering & product
+          A curated collection of my personal projects showcasing software engineering and trading systems
         </span>
       </Slide>
 

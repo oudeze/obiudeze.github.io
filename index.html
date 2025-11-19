@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obi Udeze - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Obi Udeze</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-image-container">
+                    <img src="https://via.placeholder.com/250" alt="Obi Udeze" class="profile-image" id="profileImage">
+                </div>
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Obi Udeze</span></h1>
+                <p class="hero-subtitle">Software Developer & Problem Solver</p>
+                <p class="hero-description">Building innovative solutions and bringing ideas to life through code</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Welcome to my portfolio! I'm a passionate software developer who loves creating 
+                        meaningful applications and solving complex problems. I enjoy working with modern 
+                        technologies and continuously learning new skills to stay at the forefront of 
+                        software development.
+                    </p>
+                    <p>
+                        When I'm not coding, you can find me exploring new technologies, contributing to 
+                        open-source projects, or working on personal side projects. I believe in writing 
+                        clean, maintainable code and building applications that make a difference.
+                    </p>
+                    <h3>Hobbies & Interests</h3>
+                    <ul class="hobbies-list">
+                        <li>🎨 Creative Coding</li>
+                        <li>📚 Reading Tech Blogs</li>
+                        <li>🎮 Gaming</li>
+                        <li>🏃 Fitness & Wellness</li>
+                        <li>🌍 Travel & Exploration</li>
+                        <li>☕ Coffee Enthusiast</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <p class="section-subtitle">A collection of my work from GitHub</p>
+            <div class="projects-grid" id="projectsGrid">
+                <div class="project-card skeleton">
+                    <div class="skeleton-content"></div>
+                </div>
+                <div class="project-card skeleton">
+                    <div class="skeleton-content"></div>
+                </div>
+                <div class="project-card skeleton">
+                    <div class="skeleton-content"></div>
+                </div>
+            </div>
+            <div class="github-link">
+                <a href="https://github.com/obiudeze" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    View All on GitHub →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">Next.js</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Others</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">I'm always open to discussing new projects, creative ideas, or opportunities</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:your.email@example.com" id="emailLink">your.email@example.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <a href="https://linkedin.com/in/obiudeze" target="_blank" rel="noopener noreferrer" id="linkedInLink">linkedin.com/in/obiudeze</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🐙</div>
+                        <div>
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/obiudeze" target="_blank" rel="noopener noreferrer">github.com/obiudeze</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🐦</div>
+                        <div>
+                            <h3>Twitter</h3>
+                            <a href="https://twitter.com/obiudeze" target="_blank" rel="noopener noreferrer" id="twitterLink">@obiudeze</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Obi Udeze. Built with ❤️ and GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

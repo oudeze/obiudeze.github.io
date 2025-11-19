@@ -6,7 +6,7 @@ const Data: FC = () => {
     <div className="home__data">
       <Rotate triggerOnce>
         <h1 className="home__title">
-          Mazine  Suliman
+          Obi Udeze
           <svg
             width="36"
             height="36"
@@ -59,18 +59,18 @@ const Data: FC = () => {
         </h1>
       </Rotate>
       <Fade triggerOnce>
-        <h3 className="home__subtitle">Software Engineer @ Apple</h3>
+        <h3 className="home__subtitle">Software Development Engineer</h3>
       </Fade>
       <Fade delay={300} triggerOnce>
         <p className="home__description">
-        Hi! I'm Mazine, a Software Engineer at Apple with a deep passion for product management.
-        From optimizing customer feedback systems at Apple to leading cross-functional teams as a Product Manager at FSB, I strive to solve the heart of user-centered problems.
-        My journey from engineering to product management is driven by a desire to create intuitive & impactful solutions. Welcome to my Portfolio!
+        Hi! I'm Obi, a Software Development Engineer with expertise in cloud infrastructure, ML pipelines, and distributed systems.
+        I design and ship production-grade services that influence millions in business decisions, maintaining 99.9% uptime while optimizing for performance and cost.
+        Welcome to my Portfolio!
         </p>
       </Fade>
 
       <Fade delay={600} triggerOnce>
-        <a href="https://www.linkedin.com/in/mazine-s-suliman/" className="button button--flex">
+        <a href="https://www.linkedin.com/in/obiudeze/" className="button button--flex">
           Say Hi!
           {"  "}
           <svg
