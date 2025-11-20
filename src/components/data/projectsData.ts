@@ -41,10 +41,13 @@ export const projectsData: projectsType[] = [
         image: "https://www.anabatic.com/wp-content/uploads/2025/06/pengertian-trading-saham.webp",
         GitHub: 'https://github.com/oudeze/portfolio-dashboard',
         hosted: 'https://github.com/oudeze/portfolio-dashboard',
-    }
-
-
-
-
-
-        ]
+    },
+    {
+        id: 5,
+        title: 'Clip Notes',
+        description: `A small web app for playing and annotating short audio and video clips`,
+        image: require("../assets/clip-notes-img.png"),
+        GitHub: 'https://github.com/oudeze/clip-notes',
+        hosted: 'https://github.com/oudeze/clip-notes',
+    },
+]
